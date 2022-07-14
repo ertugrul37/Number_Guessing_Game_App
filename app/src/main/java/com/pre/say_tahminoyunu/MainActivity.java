@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-@SuppressWarnings("ConvertToBasicLatin")
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtKalanHak, txtSonuc;
@@ -35,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Tanımlamalar
-        txtKalanHak = (TextView) findViewById(R.id.txtKalanHak);
-        txtSonuc = (TextView) findViewById(R.id.txtSonucc);
-        editTxtSayi = (EditText) findViewById(R.id.editTxtSayı);
+        txtKalanHak = findViewById(R.id.txtKalanHak);
+        txtSonuc =  findViewById(R.id.txtSonucc);
+        editTxtSayi =  findViewById(R.id.editTxtSayı);
 
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(5);
