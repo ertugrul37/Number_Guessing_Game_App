@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean TahminDogrumu = false;
 
     //a b c d e f g
-    CharSequence a = "Random Sayi  : ";
-    CharSequence b = "Doğru Tahmin";
-    CharSequence c = "Yanlış Tahminde Bulundunuz.";
-    CharSequence d = "Kalan Hak : ";
-    CharSequence e = "Tahmin hakkın bitti.";
-    CharSequence f = "Oyun bitti..";
-    CharSequence g = "Girlen Değer Boş Olamaz";
+    String a = "Random Sayi  : ";
+    String b = "Doğru Tahmin";
+    String c = "Yanlış Tahminde Bulundunuz.";
+    String d = "Kalan Hak : ";
+    String e = "Tahmin hakkın bitti.";
+    String f = "Oyun bitti..";
+    String g = "Girlen Değer Boş Olamaz";
 
 
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(5);
-        System.out.println((String) a+ RandomSayi);
+        System.out.println(a+ RandomSayi);
 
     }
 
@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
             if (KalanHak > 0 && TahminDogrumu == false) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
 
-                    SonucuGoster((String) b);
+                    SonucuGoster(b);
                     TahminDogrumu = true;
                 } else {
                     txtSonuc.setText(c);
                     editTxtSayi.setText("");
                 }
                 KalanHak--;
-                txtKalanHak.setText((String)d + KalanHak);
+                txtKalanHak.setText(d + KalanHak);
                 if (KalanHak == 0 && TahminDogrumu == false) {
                     SonucuGoster((String) e);
                     editTxtSayi.setText(" ");
