@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sayı_TahminOyunu</string>
+    <string name="kalan_hak_3">Kalan hak : 3</string>
+    <string name="bir_say_giriniz">Bir sayı giriniz</string>
+    <string name="tahmini_yap">Tahmini yap</string>
+    <string name="sonuc" />
+</resources>
