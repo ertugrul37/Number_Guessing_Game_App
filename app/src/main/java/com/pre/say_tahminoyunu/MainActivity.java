@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
     private Random RndSayi;
     private boolean TahminDogrumu = false;
 
+    //a b c d e f g
+    CharSequence a = "Random Sayi  : ";
+    CharSequence b = "Doğru Tahmin";
+    CharSequence c = "Yanlış Tahminde Bulundunuz.";
+    CharSequence d = "Kalan Hak : ";
+    CharSequence e = "Tahmin hakkın bitti.";
+    CharSequence f = "Oyun bitti..";
+    CharSequence g = "Girlen Değer Boş Olamaz";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(5);
-        System.out.println("Random Sayi  : " + RandomSayi);
+        System.out.println((String) a+ RandomSayi);
 
     }
-
 
     @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
@@ -45,22 +53,23 @@ public class MainActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(GelenDeger)) {
             if (KalanHak > 0 && TahminDogrumu == false) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
-                    SonucuGoster("Doğru Tahmin");
+
+                    SonucuGoster((String) b);
                     TahminDogrumu = true;
                 } else {
-                    txtSonuc.setText("Yanlış Tahminde Bulundunuz.");
+                    txtSonuc.setText(c);
                     editTxtSayi.setText("");
                 }
                 KalanHak--;
-                txtKalanHak.setText("Kalan Hak : " + KalanHak);
+                txtKalanHak.setText((String)d + KalanHak);
                 if (KalanHak == 0 && TahminDogrumu == false) {
-                    SonucuGoster("Tahmin hakkın bitti.");
+                    SonucuGoster((String) e);
                     editTxtSayi.setText(" ");
                 }
             } else
-                txtSonuc.setText("Oyun bitti..");
+                txtSonuc.setText(f);
         } else
-            txtSonuc.setText("Girlen Değer Boş Olamaz");
+            txtSonuc.setText(g);
     }
 
     private void SonucuGoster(String s) {
