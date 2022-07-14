@@ -1,1 +1,2 @@
-# Number_Guessing_Game_App Android (Java study)
+# Number_Guessing_Game_App = Android (Java study)
+Simple number guessing game
