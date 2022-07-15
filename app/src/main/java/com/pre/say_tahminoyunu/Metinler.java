@@ -1,4 +1,5 @@
 package com.pre.say_tahminoyunu;
+
 public class Metinler {
     //a b c d e f g
     String a = "Random Sayi  : ";
@@ -8,4 +9,15 @@ public class Metinler {
     String e = "Tahmin hakkın bitti.";
     String f = "Oyun bitti..";
     String g = "Girlen Değer Boş Olamaz";
+    String ab = "";
+    String ac = " ";
+
+    //oyun için değer aralığı ayarlama 0 - 5
+
+    int a_Deger = 5;
+
+
+    // kalan hak sayısını ayarlama
+
+    int k_Deger = 3;
 }

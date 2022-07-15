@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtKalanHak, txtSonuc;
     private EditText editTxtSayi;
     private String GelenDeger;
-    private int KalanHak = 3, RandomSayi;
+    private int  RandomSayi;
     private Random RndSayi;
     private boolean TahminDogrumu = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         editTxtSayi =  findViewById(R.id.editTxtSayı);
 
         RndSayi = new Random();
-        RandomSayi = RndSayi.nextInt(5);
+        RandomSayi = RndSayi.nextInt(metinler.a_Deger);
         System.out.println(metinler.a+ RandomSayi);
 
     }
@@ -41,20 +42,19 @@ public class MainActivity extends AppCompatActivity {
         GelenDeger = editTxtSayi.getText().toString();
 
         if (!TextUtils.isEmpty(GelenDeger)) {
-            if (KalanHak > 0 && TahminDogrumu == false) {
+            if (metinler.k_Deger > 0 && TahminDogrumu == false) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
-
                     SonucuGoster(metinler.b);
                     TahminDogrumu = true;
                 } else {
                     txtSonuc.setText(metinler.c);
-                    editTxtSayi.setText("");
+                    editTxtSayi.setText(metinler.ab);
                 }
-                KalanHak--;
-                txtKalanHak.setText(metinler.d + KalanHak);
-                if (KalanHak == 0 && TahminDogrumu == false) {
+                metinler.k_Deger--;
+                txtKalanHak.setText(metinler.d + metinler.k_Deger);
+                if (metinler.k_Deger == 0 && TahminDogrumu == false) {
                     SonucuGoster(metinler.e);
-                    editTxtSayi.setText(" ");
+                    editTxtSayi.setText(metinler.ac);
                 }
             } else
                 txtSonuc.setText(metinler.f);
