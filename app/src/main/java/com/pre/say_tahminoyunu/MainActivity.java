@@ -1,4 +1,5 @@
 package com.pre.say_tahminoyunu;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -9,13 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     private TextView txtKalanHak, txtSonuc;
     private EditText editTxtSayi;
     private String GelenDeger;
-    private int  RandomSayi;
+    private int RandomSayi;
     private Random RndSayi;
     private boolean TahminDogrumu = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         //Tanımlamalar
         Metinler metinler = new Metinler();
         txtKalanHak = findViewById(R.id.txtKalanHak);
-        txtSonuc =  findViewById(R.id.txtSonucc);
-        editTxtSayi =  findViewById(R.id.editTxtSayı);
-        
+        txtSonuc = findViewById(R.id.txtSonucc);
+        editTxtSayi = findViewById(R.id.editTxtSayı);
+
         //Random Sayı üretme
-        RndSayi = new Random();
-        RandomSayi = RndSayi.nextInt(metinler.a_Deger);
-        System.out.println(metinler.a+ RandomSayi);
+       RandomSayi =new Random().nextInt(metinler.a_Deger);
+       System.out.println(metinler.a + RandomSayi);
     }
+
     public void btnTahminEt(View view) {
         Metinler metinler = new Metinler();
         GelenDeger = editTxtSayi.getText().toString();
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         } else
             txtSonuc.setText(metinler.g);
     }
+
     private void SonucuGoster(String s) {
         editTxtSayi.setEnabled(false);
         txtSonuc.setText(s);
