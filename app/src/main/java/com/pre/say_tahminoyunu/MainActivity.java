@@ -19,59 +19,48 @@ public class MainActivity extends AppCompatActivity {
     private int KalanHak = 3, RandomSayi;
     private Random RndSayi;
     private boolean TahminDogrumu = false;
-
-    //a b c d e f g
-    String a = "Random Sayi  : ";
-    String b = "Doğru Tahmin";
-    String c = "Yanlış Tahminde Bulundunuz.";
-    String d = "Kalan Hak : ";
-    String e = "Tahmin hakkın bitti.";
-    String f = "Oyun bitti..";
-    String g = "Girlen Değer Boş Olamaz";
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Tanımlamalar
+        Metinler metinler = new Metinler();
         txtKalanHak = findViewById(R.id.txtKalanHak);
         txtSonuc =  findViewById(R.id.txtSonucc);
         editTxtSayi =  findViewById(R.id.editTxtSayı);
 
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(5);
-        System.out.println(a+ RandomSayi);
+        System.out.println(metinler.a+ RandomSayi);
 
     }
-
-    @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
+        Metinler metinler = new Metinler();
         GelenDeger = editTxtSayi.getText().toString();
 
         if (!TextUtils.isEmpty(GelenDeger)) {
             if (KalanHak > 0 && TahminDogrumu == false) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
 
-                    SonucuGoster(b);
+                    SonucuGoster(metinler.b);
                     TahminDogrumu = true;
                 } else {
-                    txtSonuc.setText(c);
+                    txtSonuc.setText(metinler.c);
                     editTxtSayi.setText("");
                 }
                 KalanHak--;
-                txtKalanHak.setText(d + KalanHak);
+                txtKalanHak.setText(metinler.d + KalanHak);
                 if (KalanHak == 0 && TahminDogrumu == false) {
-                    SonucuGoster((String) e);
+                    SonucuGoster(metinler.e);
                     editTxtSayi.setText(" ");
                 }
             } else
-                txtSonuc.setText(f);
+                txtSonuc.setText(metinler.f);
         } else
-            txtSonuc.setText(g);
+            txtSonuc.setText(metinler.g);
     }
-
     private void SonucuGoster(String s) {
         editTxtSayi.setEnabled(false);
         txtSonuc.setText(s);
