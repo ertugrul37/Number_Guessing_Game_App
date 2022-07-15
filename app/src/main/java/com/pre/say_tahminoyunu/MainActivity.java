@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
        RandomSayi =new Random().nextInt(metinler.a_Deger);
        System.out.println(metinler.a + RandomSayi);
     }
-
     @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
         Metinler metinler = new Metinler();
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         } else
             txtSonuc.setText(metinler.g);
     }
-
     private void SonucuGoster(String s) {
         editTxtSayi.setEnabled(false);
         txtSonuc.setText(s);
