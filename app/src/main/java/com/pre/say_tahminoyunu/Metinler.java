@@ -14,7 +14,8 @@ public class Metinler {
 
     //oyun için değer aralığı ayarlama 0 - 5
 
-    int a_Deger = 5;
+  /* Son değer*/ int a_Deger = 5;
+  /* İlk değer*/ int ab_Deger = 0;
 
 
     // kalan hak sayısını ayarlama

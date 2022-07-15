@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         txtSonuc =  findViewById(R.id.txtSonucc);
         editTxtSayi =  findViewById(R.id.editTxtSayı);
 
+        //Random Sayı üretme
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(metinler.a_Deger);
         System.out.println(metinler.a+ RandomSayi);
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         GelenDeger = editTxtSayi.getText().toString();
 
         if (!TextUtils.isEmpty(GelenDeger)) {
-            if (metinler.k_Deger > 0 && TahminDogrumu == false) {
+            if (metinler.k_Deger > metinler.ab_Deger && TahminDogrumu == false) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
                     SonucuGoster(metinler.b);
                     TahminDogrumu = true;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 metinler.k_Deger--;
                 txtKalanHak.setText(metinler.d + metinler.k_Deger);
-                if (metinler.k_Deger == 0 && TahminDogrumu == false) {
+                if (metinler.k_Deger == metinler.ab_Deger && TahminDogrumu == false) {
                     SonucuGoster(metinler.e);
                     editTxtSayi.setText(metinler.ac);
                 }
