@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private int KalanHak = 3, RandomSayi;
     private Random RndSayi;
     private boolean TahminDogrumu = false;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
