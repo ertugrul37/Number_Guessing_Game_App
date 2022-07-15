@@ -12,7 +12,6 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private TextView txtKalanHak, txtSonuc;
     private EditText editTxtSayi;
-    private String GelenDeger;
     private int RandomSayi;
     private boolean TahminDogrumu = false;
 
@@ -35,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
         Metinler metinler = new Metinler();
-        GelenDeger = editTxtSayi.getText().toString();
-        if (!TextUtils.isEmpty(GelenDeger)) {
+        String gelenDeger = editTxtSayi.getText().toString();
+        if (!TextUtils.isEmpty(gelenDeger)) {
             if (metinler.k_Deger > metinler.ab_Deger && !TahminDogrumu) {
-                if (GelenDeger.equals(String.valueOf(RandomSayi))) {
+                if (gelenDeger.equals(String.valueOf(RandomSayi))) {
                     SonucuGoster(metinler.b);
                     TahminDogrumu = true;
                 } else {
