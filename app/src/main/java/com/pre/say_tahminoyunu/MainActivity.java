@@ -20,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Tanımlamalar
         Metinler metinler = new Metinler();
         txtKalanHak = findViewById(R.id.txtKalanHak);
         txtSonuc =  findViewById(R.id.txtSonucc);
         editTxtSayi =  findViewById(R.id.editTxtSayı);
+        
         //Random Sayı üretme
         RndSayi = new Random();
         RandomSayi = RndSayi.nextInt(metinler.a_Deger);
