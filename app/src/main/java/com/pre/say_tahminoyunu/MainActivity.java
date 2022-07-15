@@ -1,5 +1,7 @@
 package com.pre.say_tahminoyunu;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
        System.out.println(metinler.a + RandomSayi);
     }
 
+    @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
         Metinler metinler = new Metinler();
         GelenDeger = editTxtSayi.getText().toString();
         if (!TextUtils.isEmpty(GelenDeger)) {
-            if (metinler.k_Deger > metinler.ab_Deger && TahminDogrumu == false) {
+            if (metinler.k_Deger > metinler.ab_Deger && !TahminDogrumu) {
                 if (GelenDeger.equals(String.valueOf(RandomSayi))) {
                     SonucuGoster(metinler.b);
                     TahminDogrumu = true;
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 metinler.k_Deger--;
                 txtKalanHak.setText(metinler.d + metinler.k_Deger);
-                if (metinler.k_Deger == metinler.ab_Deger && TahminDogrumu == false) {
+                if (metinler.k_Deger == metinler.ab_Deger && !TahminDogrumu) {
                     SonucuGoster(metinler.e);
                     editTxtSayi.setText(metinler.ac);
                 }
