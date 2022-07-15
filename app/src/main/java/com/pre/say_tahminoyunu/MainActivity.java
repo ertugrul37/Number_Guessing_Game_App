@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTxtSayi;
     private String GelenDeger;
     private int RandomSayi;
-    private Random RndSayi;
     private boolean TahminDogrumu = false;
 
     @Override
