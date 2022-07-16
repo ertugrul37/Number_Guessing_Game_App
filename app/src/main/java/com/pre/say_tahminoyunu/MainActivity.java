@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //Random Sayı üretme
        RandomSayi =new Random().nextInt(metinler.a_Deger);
        System.out.println(metinler.a + RandomSayi);
+
     }
     @SuppressLint("SetTextI18n")
     public void btnTahminEt(View view) {
